@@ -231,6 +231,8 @@ public class MainActivity<Imageview> extends AppCompatActivity {
     }
 
     private void newgame(){
+        dw=0;
+        draw.setText(Integer.toString(dw));
         health=3;
         aihealth=3;
         usrhp1.setImageResource(R.drawable.heart2);
