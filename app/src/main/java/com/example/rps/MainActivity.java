@@ -28,37 +28,37 @@ public class MainActivity<Imageview> extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Random rnd = new Random();
-            init();
+        init();
 
-            rock.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    user = 1;
-                    playercard.setImageResource(R.drawable.rock);
-                    aimove();
+        rock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user = 1;
+                playercard.setImageResource(R.drawable.rock);
+                aimove();
 
 
-                }
-            });
+            }
+        });
 
-            paper.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    user = 2;
-                    playercard.setImageResource(R.drawable.paper);
-                    aimove();
+        paper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user = 2;
+                playercard.setImageResource(R.drawable.paper);
+                aimove();
 
-                }
-            });
-            scisor.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    user = 3;
-                    playercard.setImageResource(R.drawable.scissors);
-                    aimove();
+            }
+        });
+        scisor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user = 3;
+                playercard.setImageResource(R.drawable.scissors);
+                aimove();
 
-                }
-            });
+            }
+        });
     }
 
     private void userhp() {
@@ -167,6 +167,7 @@ public class MainActivity<Imageview> extends AppCompatActivity {
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+                alertView("Vesztettél!");
             }
             if(aihealth <= 0){
                 Context context = getApplicationContext();
@@ -174,6 +175,7 @@ public class MainActivity<Imageview> extends AppCompatActivity {
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+                alertView("Győztél!");
             }
         }
     }
@@ -209,15 +211,36 @@ public class MainActivity<Imageview> extends AppCompatActivity {
                         dialogInterface.dismiss();
                     }
                 });
-        /*AlertDialog.Builder user=new AlertDialog.Builder(MainActivity.this)
-                .setTitle("Vesztettél")
-                .setMessage(message)
-                .setPositiveButton("OK",new DialogInterface.OnClickListener(){
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
 
-                });
-    }*/
+    }
+    private void alertView( String message ) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+        dialog.setTitle( "Szeretnél újra játszani?" )
+                .setMessage(message)
+                .setNegativeButton("Kilépés", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialoginterface, int i) {
+                        dialoginterface.cancel();
+                        finish();
+                        System.exit(0);
+                    }})
+                .setPositiveButton("Új játék", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialoginterface, int i) {
+                        newgame();
+                    }
+                }).show();
+    }
+
+    private void newgame(){
+        health=3;
+        aihealth=3;
+        usrhp1.setImageResource(R.drawable.heart2);
+        usrhp2.setImageResource(R.drawable.heart2);
+        usrhp3.setImageResource(R.drawable.heart2);
+        hp1.setImageResource(R.drawable.heart2);
+        hp2.setImageResource(R.drawable.heart2);
+        hp3.setImageResource(R.drawable.heart2);
+
+
+
     }
 }
