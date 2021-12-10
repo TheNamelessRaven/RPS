@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+    <LinearLayout
+        android:id="@+id/sor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/hp1"
+            android:layout_width="25dp"
+            android:layout_height="50dp"
+            android:src="@drawable/heart2"/>
+        <ImageView
+            android:id="@+id/hp2"
+            android:layout_width="25dp"
+            android:layout_height="50dp"
+            android:src="@drawable/heart2"/>
+        <ImageView
+            android:id="@+id/hp3"
+            android:layout_width="25dp"
+            android:layout_height="50dp"
+            android:src="@drawable/heart2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gép                "
+            android:textSize="28sp"/>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Játékos"
+            android:textSize="28sp"/>
+
+        <ImageView
+            android:id="@+id/usrhp1"
+            android:layout_width="25dp"
+            android:layout_height="50dp"
+            android:src="@drawable/heart2"/>
+        <ImageView
+            android:id="@+id/usrhp2"
+            android:layout_width="25dp"
+            android:layout_height="50dp"
+            android:src="@drawable/heart2"/>
+        <ImageView
+            android:id="@+id/usrhp3"
+            android:layout_width="25dp"
+            android:layout_height="50dp"
+            android:src="@drawable/heart2"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sor2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sor1"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Döntetlenek Száma:"
+            android:textSize="28sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/draw"
+            android:textSize="28sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sor3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/sor2"
+        >
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:id="@+id/aicard"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sor6"
+        android:layout_below="@+id/sor5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A te választásod"
+            android:textSize="28sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sor5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/sor4"
+        >
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:id="@+id/playercard"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sor4"
+        android:layout_below="@+id/sor3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gép Választása"
+            android:textSize="28sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sor7"
+        android:layout_below="@+id/sor6"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:id="@+id/rock"
+            android:src="@drawable/rock"></ImageView>
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:id="@+id/paper"
+            android:src="@drawable/paper"></ImageView>
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:id="@+id/scisor"
+            android:src="@drawable/scissors"></ImageView>
+    </LinearLayout>
+</RelativeLayout>
